@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpResponse, HttpEventType } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpEventType, HttpEvent, HttpErrorResponse } from '@angular/common/http';
 import { UploadFileService } from '../services/upload-file.service';
 
 @Component({
@@ -14,6 +14,11 @@ export class CreateBeerceptionComponent implements OnInit {
   progress: { percentage: number } = { percentage: 0 }
 
   fileUploading: boolean;
+
+  showSuccess: boolean = false;
+  showError: boolean = false;
+
+  errorMessage: string;
 
   constructor(private uploadService: UploadFileService) { }
 
@@ -36,13 +41,22 @@ export class CreateBeerceptionComponent implements OnInit {
     this.currentFileUpload = this.selectedFiles.item(0);
 
     this.uploadService.addBeerception(this.currentFileUpload)
-      .subscribe(event => {
-        if (event.type === HttpEventType.UploadProgress) {
-          this.progress.percentage = Math.round(100 * event.loaded / event.total);
-        } else if (event instanceof HttpResponse) {
-          console.log('File is completely uploaded!');
+      .subscribe(
+        (event: HttpEvent<any>) => {
+          if (event.type === HttpEventType.UploadProgress) {
+            this.progress.percentage = Math.round(100 * event.loaded / event.total);
+          } else if (event instanceof HttpResponse) {
+            console.log('File is completely uploaded!');
+            this.showSuccess = true;
+          }
+        },
+        error => {
+          let errorJson = JSON.parse(error['error']);
+          this.showError = true;
+          let codeError: boolean = false;
+          this.errorMessage = errorJson['errorMessage'];
         }
-      });
+      );
 
     this.selectedFiles = undefined;
   }
