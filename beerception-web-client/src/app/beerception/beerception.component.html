@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="row justify-content-md-center">
+		<div class="col-md-auto">
+			<img src="{{ imageData }}" class="img-fluid ception-image" alt="Beerception">
+		</div>
+	</div>
+	<hr/>
+	<div *ngIf="beerFileInfo" class="row justify-content-md-center">
+		<div class="col">
+			<p class="bs-component">
+				<button (click)="beerUp()" type="button" class="btn btn-success btn-lg btn-block">BEER UP! ({{ beerFileInfo.beerUp }})</button>
+			</p>
+		</div>
+		<div class="col">
+			<p class="bs-component">
+				<button (click)="beerDown()" type="button" class="btn btn-danger btn-lg btn-block">BEER DOWN! ({{ beerFileInfo.beerDown }})</button>
+			</p>
+		</div>
+	</div>
+</div>
