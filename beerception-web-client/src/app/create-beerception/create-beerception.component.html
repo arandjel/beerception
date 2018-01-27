@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div *ngIf="currentFileUpload" class="progress">
+      <div class="progress-bar progress-bar-info progress-bar-striped bg-success"
+        role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+        aria-valuemin="0" aria-valuemax="100"
+        [ngStyle]="{width:progress.percentage+'%'}">
+        {{progress.percentage}}%
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col-6">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+        </div>
+        <div class="custom-file">
+          <input (change)="selectFile($event)" type="file" class="custom-file-input" id="inputGroupFile01">
+          <label class="custom-file-label" for="inputGroupFile01">Choose beerception photo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col-6">
+      <div class="bs-component">
+        <ul class="list-group">
+          <h5>Rules</h5>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Same user cannot take two photos in the row.
+            <span class="badge badge-primary badge-pill">1</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Only the latest photo can be beerup-ed or beerdown-ed.
+            <span class="badge badge-primary badge-pill">2</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            If photo has -10 score, photo gets deleted from server. Previous photo takes it place.
+            <span class="badge badge-primary badge-pill">3</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            It is up to users to keep up the good beerception practice.
+            <span class="badge badge-primary badge-pill">4</span>
+          </li>
+        </ul>
+    </div>
+  </div>
+</div>

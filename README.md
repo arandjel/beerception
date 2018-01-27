@@ -1,8 +1,8 @@
 # beerception
-beerception
+Beer lovers must love beerception. Take a picture of your beer glass (with beer in it) against the application screen showing latest beerception photo. Upload your photo, and wait for someone else to do the same with yours.
 
-## Getting Started && Development
-
-Add git repository to your local setup.
-Create new branch from 'dev' branch, and do your development on it. Push that branch to remote. 
-When job is complete 'admin' will merge your branch to 'dev' and later to 'master', after that your branch shall be 
+## Rules
+* Same user cannot take two photos in the row.
+* Only the latest photo can be beerup-ed or beerdown-ed.
+* If photo has 10 more beerdowns than beerups, photo gets deleted from server. Previous latest takes its place.
+* It is up to users to keep up the good beerception practice.
