@@ -27,6 +27,9 @@ public class BeerFile {
 	
 	private int beerDown;
 	
+	/**
+	 * remove @Lob annotation when working with postgresql database
+	 */
 	@JsonIgnore
 	@Lob
 	private byte[] image;

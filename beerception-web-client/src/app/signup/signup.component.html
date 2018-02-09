@@ -2,7 +2,7 @@
   <div class="row justify-content-md-center">
     <div class="col-6 ">
       <div *ngIf="invalidData" class="alert alert-danger">  
-        {{notification.msgBody}}
+        {{ notification.msgBody }}
       </div>
       <form [formGroup]="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
         <div class="form-group">

@@ -11,7 +11,7 @@ import org.springframework.security.core.GrantedAuthority;
 
 /**
  * Class presenting Role entity. Class implements GrantedAuthority class for
- * providing user information to Spring Boot framework.
+ * providing role information to Spring Boot framework.
  * 
  * @author Miloš Ranđelović
  *

@@ -33,7 +33,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  *
  */
 @Entity
-@Table(name = "user")
+@Table(name = "user_person")
 public class User implements UserDetails, Serializable {
 
 	private static final long serialVersionUID = -3271129540095298417L;
