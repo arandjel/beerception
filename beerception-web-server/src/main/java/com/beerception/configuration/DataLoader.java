@@ -12,8 +12,7 @@ import com.beerception.repository.RoleRepository;
 
 /**
  * Class for setting up test data.
- * Class implements ApplicationRunner, and therefore will be run with Application start. 
- * It will only be run with test cases.
+ * Class implements ApplicationRunner, and therefore will be run with Application start.
  * 
  * @author Miloš Ranđelović
  *
