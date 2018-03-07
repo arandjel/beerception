@@ -8,5 +8,5 @@ Beer lovers must love beerception. Take a picture of your beer glass (with beer 
 * It is up to users to keep up the good beerception practice.
 
 ## Deployment
-* Backend: Heroku + PostgreSQL
-* Frontend: Github pages
+* Backend: [Heroku + PostgreSQL](https://www.heroku.com)
+* Frontend: [Github pages](https://arandjel.github.io/beerception/)
