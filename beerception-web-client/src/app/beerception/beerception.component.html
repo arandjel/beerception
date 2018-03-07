@@ -1,11 +1,13 @@
 <div class="container">
 	<div class="row justify-content-md-center">
 		<div class="col-md-auto">
-			<img src="{{ imageData }}" class="img-fluid ception-image" alt="Beerception">
+			<img *ngIf="imageData" src="{{ imageData }}" class="img-fluid ception-image" alt="Beerception">
+			<p *ngIf="!imageData" >Loading latest beerception...</p>
+			<img *ngIf="!imageData" src="/assets/imgs/beerception.png" class="img-fluid ception-image" alt="Beerception">
 		</div>
 	</div>
 	<hr/>
-	<div *ngIf="beerFileInfo" class="row justify-content-md-center">
+	<div *ngIf="beerFileInfo && imageData" class="row justify-content-md-center">
 		<div class="col">
 			<p class="bs-component">
 				<button (click)="beerUp()" type="button" class="btn btn-success btn-lg btn-block">BEER UP! ({{ beerFileInfo.beerUp }})</button>
