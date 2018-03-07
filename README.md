@@ -6,3 +6,7 @@ Beer lovers must love beerception. Take a picture of your beer glass (with beer 
 * Only the latest photo can be beerup-ed or beerdown-ed.
 * If photo has 10 more beerdowns than beerups, photo gets deleted from server. Previous latest takes its place.
 * It is up to users to keep up the good beerception practice.
+
+## Deployment
+* Backend: Heroku + PostgreSQL
+* Frontend: Github pages
