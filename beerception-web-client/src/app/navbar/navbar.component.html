@@ -11,7 +11,7 @@
           <a class="nav-link" routerLink="/create-beerception" title="Create new beerception"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i></a>
         </li>
         <li routerLinkActive="active" class="nav-item">
-          <a (click)="open(rulesModal)" class="nav-link" title="Rules"><i class="fa fa-question-circle-o fa-lg" aria-hidden="true"></i></a>
+          <a href="javascript:void(0)" (click)="open(rulesModal)" class="nav-link" title="Rules"><i class="fa fa-question-circle-o fa-lg" aria-hidden="true"></i></a>
         </li>
         <li *ngIf="!hasSignedIn()" routerLinkActive="active" class="nav-item">
           <a class="nav-link" routerLink="/login">Login</a>
@@ -24,7 +24,7 @@
             <a class="dropdown-item" routerLink="/profile">Profile Info</a>
             <a class="dropdown-item" routerLink="/change-password">Change Password</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" (click)="logout()">Logout</a>
+            <a class="dropdown-item" href="javascript:void(0)" (click)="logout()">Logout</a>
           </div>
         </li>
       </ul>

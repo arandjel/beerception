@@ -39,7 +39,7 @@ public class BeerController {
 		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		
-		if (auth.getName().equals(beerFileService.getLatestBeerFile().getOwner()))
+		if (beerFileService.getLatestBeerFile()!=null && auth.getName().equals(beerFileService.getLatestBeerFile().getOwner()))
 			throw new DoubleUploadException("You cannot upload photo again before someone else does!");
 		
 		BeerFile newBeerFile = beerFileService.addBeerFile(beerFile);
@@ -50,6 +50,9 @@ public class BeerController {
 	@RequestMapping(method=RequestMethod.GET, value="")
 	public ResponseEntity<?> getLatestBeerFile() {
 		BeerFile beerFile = beerFileService.getLatestBeerFile();
+		
+		if (beerFile == null)
+			return new ResponseEntity<String>("Beerception not found...", HttpStatus.NOT_FOUND);
 		
 		HttpHeaders headers = new HttpHeaders();
 		headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + beerFile.getImageName() + "\"");
@@ -63,6 +66,9 @@ public class BeerController {
 	@RequestMapping(method=RequestMethod.GET, value="/info")
 	public ResponseEntity<?> getLatestBeerFileInfo() {
 		BeerFile beerFile = beerFileService.getLatestBeerFile();
+		
+		if (beerFile == null)
+			return new ResponseEntity<String>("Beerception not found...", HttpStatus.NOT_FOUND);
 				
 		return new ResponseEntity<>(beerFile, HttpStatus.OK);
 	}
