@@ -4,7 +4,9 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class ConfigService {
 
-  private _host_url = 'http://localhost:8080';
+  //private _host_url = 'http://localhost:8080';
+
+  private _host_url = 'https://beerception.herokuapp.com';
 
   private _api_url = this._host_url + '/api/v1';
 
