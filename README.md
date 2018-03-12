@@ -10,3 +10,4 @@ Beer lovers must love beerception. Take a picture of your beer glass (with beer 
 ## Deployment
 * Backend: [Heroku + PostgreSQL](https://www.heroku.com)
 * Frontend: [Github pages](https://arandjel.github.io/beerception/)
+* Mobile apps: [Ionic3 project](https://github.com/arandjel/beerception-ionic)
